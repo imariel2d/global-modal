@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Modal, ModalMethods } from './Modal';
+
+export const App = () =>{
+    const ref = useRef<ModalMethods>(null);
+
+    return (
+        <div className="App">
+            <button onClick={() => ref.current?.open()}>Click me</button>
+            <Modal ref={ref} defaultOpen={true}>
+                <h1>Hello world</h1>
+            </Modal>
+        </div>
+    );
+
 }
-
-export default App;
