@@ -1,0 +1,37 @@
+.my-modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.my-modal.content {
+    z-index: 1;
+    width: 600px;
+    height: 300px;
+    background: white;
+    animation: fade-in 0.3s ease-in-out;
+}
+
+.my-modal.close {
+    z-index: 1;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 50px;
+    background: white;
+}
+
+@keyframes fade-in {
+    from {
+        transform: translateY(150%);
+    } to {
+              transform: translateY(0);
+          }
+}

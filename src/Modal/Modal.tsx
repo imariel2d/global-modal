@@ -1,6 +1,8 @@
 import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import { createPortal } from 'react-dom';
 
+import './modal.css';
+
 const elementModal = document.createElement('div');
 document.body.insertBefore(elementModal, document.body.firstChild);
 
@@ -24,8 +26,15 @@ export const Modal = forwardRef<any, Props>(({ children, defaultOpen = false }, 
 
     const modalJSX = (
         <div className="my-modal">
-            {children}
-            <button onClick={() => setIsOpen(false)}>Close</button>
+            <div className="my-modal content">
+                {children}
+            </div>
+            <button
+                className="my-modal close"
+                onClick={() => setIsOpen(false)}
+            >
+                Close
+            </button>
         </div>
     );
 

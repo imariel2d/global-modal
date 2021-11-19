@@ -8,7 +8,7 @@ export const App = () =>{
     return (
         <div className="App">
             <button onClick={() => ref.current?.open()}>Click me</button>
-            <Modal ref={ref} defaultOpen={true}>
+            <Modal ref={ref} defaultOpen={false}>
                 <h1>Hello world</h1>
             </Modal>
         </div>
